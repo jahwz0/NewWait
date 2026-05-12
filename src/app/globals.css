@@ -1,7 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Soulcraft";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Soulcraft.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic LT";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ITCAvantGardeGothic-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic LT";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/ITCAvantGardeGothicLT-Bold.otf") format("opentype");
+}
+
 :root {
-  --background: #ffffff;
+  --background: #F5F1EAEA;
   --foreground: #171717;
 }
 
@@ -10,13 +35,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: "Inter", sans-serif;
+  --font-avant-garde: "ITC Avant Garde Gothic LT", sans-serif;
+  --font-soulcraft: "Soulcraft", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 body {
