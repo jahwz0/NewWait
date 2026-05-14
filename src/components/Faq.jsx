@@ -13,34 +13,34 @@ export default function Faq(){
     const [openIndex, setOpenIndex] = useState(null)
 
     return(
-        <div id="faq" className="bg-[#FFD738] flex flex-row px-[37px] py-[60px] gap-[60px] border-2">
+        <div id="faq" className="bg-[#FFD738] flex flex-col xl:flex-row px-5 sm:px-9.25 py-10 sm:py-15 gap-8 sm:gap-15 border-2">
 
             {/* Left */}
-            <div className="text-black min-w-[340px]">
-                <span className="block font-inter text-[12px] leading-[145%]">04-FAQ</span>
-                <span className="block font-soulcraft text-[96px] leading-[84%] tracking-[-4px]">FREQUENTLY</span>
-                <span className="block font-soulcraft text-[96px] leading-[84%] tracking-[-4px]">ASKED</span>
-                <span className="block font-soulcraft text-[96px] leading-[84%] tracking-[-4px]">QUESTIONS</span>
-                <span className="block font-inter text-[12px] leading-[145%] mt-4">What do you want to know?</span>
+            <div className="text-black sm:min-w-85">
+                <span className="block font-inter text-[11px] sm:text-[12px] leading-[145%]">04-FAQ</span>
+                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">FREQUENTLY</span>
+                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">ASKED</span>
+                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">QUESTIONS</span>
+                <span className="block font-inter text-[11px] sm:text-[12px] leading-[145%] mt-4">What do you want to know?</span>
             </div>
 
             {/* Right: FAQ accordion */}
-            <div className="flex flex-col gap-4 flex-1">
+            <div className="flex flex-col gap-3 sm:gap-4 flex-1">
                 {faqs.map((faq, i) => (
                     <div
                         key={i}
                         className="[box-shadow:4px_4px_0px_black] rounded-[8px] bg-[#F5F1EA] cursor-pointer"
                         onClick={() => setOpenIndex(openIndex === i ? null : i)}
                     >
-                        <div className="flex flex-row items-center gap-4 px-5 py-4">
-                            <div className="w-10 h-10 rounded-full bg-[#FF2600] flex items-center justify-center shrink-0">
-                                <span className="text-white font-bold text-[16px]">!</span>
+                        <div className="flex flex-row items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-4">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#FF2600] flex items-center justify-center shrink-0">
+                                <span className="text-white font-bold text-[14px] sm:text-[16px]">!</span>
                             </div>
-                            <span className="font-avant-garde font-[700] text-[16px] tracking-[-0.32px]">{faq.q}</span>
+                            <span className="font-avant-garde font-[700] text-[12px] sm:text-[16px] tracking-[-0.32px]">{faq.q}</span>
                         </div>
                         {openIndex === i && (
-                            <div className="px-5 pb-4 pl-[76px]">
-                                <p className="font-inter text-[13px] leading-[145%]">{faq.a}</p>
+                            <div className="px-4 sm:px-5 pb-3 sm:pb-4 pl-15 sm:pl-19">
+                                <p className="font-inter text-[11px] sm:text-[13px] leading-[145%]">{faq.a}</p>
                             </div>
                         )}
                     </div>

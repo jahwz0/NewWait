@@ -8,7 +8,7 @@ function WaitlistForm() {
     const [email, setEmail] = useState('')
 
     return (
-        <div className="bg-[#1a1a1a] rounded-[20px] p-8 flex flex-col gap-5 w-150">
+        <div className="bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col gap-5 w-full sm:w-80 md:w-150 lg:w-100 xl:w-150">
 
             {/* Email input */}
             <div className="flex flex-col gap-1">
@@ -18,7 +18,7 @@ function WaitlistForm() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="You@email.com"
-                    className="bg-transparent border-b border-white/30 text-white text-[22px] font-inter pb-2 outline-none placeholder:text-white/30 focus:border-white/70 transition-colors"
+                    className="bg-transparent border-b border-white/30 text-white text-[16px] sm:text-[22px] font-inter pb-2 outline-none placeholder:text-white/30 focus:border-white/70 transition-colors"
                 />
             </div>
 
@@ -26,7 +26,7 @@ function WaitlistForm() {
             <div className="flex flex-row gap-3">
                 <button
                     onClick={() => setRole('client')}
-                    className={`flex-1 py-3 rounded-full font-inter text-[12px] font-bold uppercase tracking-widest transition-colors ${
+                    className={`flex-1 py-2 sm:py-3 rounded-full font-inter text-[11px] sm:text-[12px] font-bold uppercase tracking-widest transition-colors ${
                         role === 'client'
                             ? 'bg-[#FF2600] text-white'
                             : 'bg-transparent border border-white/40 text-white/60'
@@ -36,7 +36,7 @@ function WaitlistForm() {
                 </button>
                 <button
                     onClick={() => setRole('stylist')}
-                    className={`flex-1 py-3 rounded-full font-inter text-[12px] font-bold uppercase tracking-widest transition-colors ${
+                    className={`flex-1 py-2 sm:py-3 rounded-full font-inter text-[11px] sm:text-[12px] font-bold uppercase tracking-widest transition-colors ${
                         role === 'stylist'
                             ? 'bg-[#FF2600] text-white'
                             : 'bg-transparent border border-white/40 text-white/60'
@@ -49,27 +49,17 @@ function WaitlistForm() {
             {/* Checkboxes */}
             <div className="flex flex-col gap-2">
                 <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                        type="checkbox"
-                        checked={privacy}
-                        onChange={e => setPrivacy(e.target.checked)}
-                        className="w-4 h-4 accent-[#FF2600]"
-                    />
-                    <span className="font-inter text-[12px] text-white/60">I agree to the Privacy policy</span>
+                    <input type="checkbox" checked={privacy} onChange={e => setPrivacy(e.target.checked)} className="w-4 h-4 accent-[#FF2600]" />
+                    <span className="font-inter text-[11px] sm:text-[12px] text-white/60">I agree to the Privacy policy</span>
                 </label>
                 <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                        type="checkbox"
-                        checked={emails}
-                        onChange={e => setEmails(e.target.checked)}
-                        className="w-4 h-4 accent-[#FF2600]"
-                    />
-                    <span className="font-inter text-[12px] text-white/60">Accept occasional email about launch and other notices</span>
+                    <input type="checkbox" checked={emails} onChange={e => setEmails(e.target.checked)} className="w-4 h-4 accent-[#FF2600]" />
+                    <span className="font-inter text-[11px] sm:text-[12px] text-white/60">Accept occasional email about launch and other notices</span>
                 </label>
             </div>
 
             {/* Submit */}
-            <button className="w-full bg-[#FF2600] text-white font-inter text-[13px] font-bold uppercase tracking-widest py-5 rounded-full hover:bg-[#e02200] transition-colors">
+            <button className="w-full bg-[#FF2600] text-white font-inter text-[12px] sm:text-[13px] font-bold uppercase tracking-widest py-4 sm:py-5 rounded-full hover:bg-[#e02200] transition-colors">
                 Join the Waitlist
             </button>
 
@@ -79,34 +69,35 @@ function WaitlistForm() {
 
 export default function Waitlist() {
     return (
-        <div id="waitlist" className="border-2 pt-20 pb-20">
+        <div id="waitlist" className="border-2 pt-10 sm:pt-20 pb-10 sm:pb-20">
 
             {/* Stats row */}
-            <div className="grid grid-cols-4 px-[74px] pb-[20px]">
-                <span className="font-inter text-[12px] font-[400]">ALREADY ON THE WAITLIST</span>
-                <span className="font-inter text-[12px] font-[400]">STYLISTS/BARBERS ON THE WAITLIST</span>
-                <span className="font-inter text-[12px] font-[400]">CLIENTS ON THE WAITLIST</span>
-                <span className="font-inter text-[12px] font-[400]">LAUNCH</span>
-            </div>
-            <div className="grid grid-cols-4 px-[74px] pb-[50px]">
-                <span className="font-inter text-[32px] font-[700] leading-[84%]">XXXX</span>
-                <span className="font-inter text-[32px] font-[700] leading-[84%]">XXXX</span>
-                <span className="font-inter text-[32px] font-[700] leading-[84%]">XXXX</span>
-                <span className="font-inter text-[32px] font-[700] leading-[84%]">XXXX</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 px-5 lg:px-18.5 pb-8 sm:pb-12.5 gap-y-4 sm:gap-y-0 text-center justify-items-center">
+                {[
+                    { label: 'ON THE WAITLIST', value: 'XXXX' },
+                    { label: 'STYLISTS/BARBERS', value: 'XXXX' },
+                    { label: 'CLIENTS', value: 'XXXX' },
+                    { label: 'LAUNCH', value: 'XXXX' },
+                ].map((stat, i) => (
+                    <div key={i} className="flex flex-col gap-5">
+                        <span className="font-inter text-[8px] sm:text-[9px] md:text-[12px] font-normal">{stat.label}</span>
+                        <span className="font-inter text-[22px] sm:text-[32px] font-[700] leading-[84%]">{stat.value}</span>
+                    </div>
+                ))}
             </div>
 
             {/* Main row: copy left, form right */}
-            <div className="flex flex-row items-start gap-20 px-[74px]">
+            <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-10 xl:gap-20 px-5 sm:px-18.5">
 
                 {/* Left: heading + benefits */}
                 <div className="flex flex-col flex-1">
-                    <span className="font-inter font-[500] text-[12px] leading-[145%] uppercase tracking-widest mb-3">03-WAITLIST</span>
-                    <div className="font-soulcraft font-[700] text-[96px] leading-[84%] tracking-[-1.92px] mb-6">
+                    <span className="font-inter font-[500] text-[11px] sm:text-[12px] leading-[145%] uppercase tracking-widest mb-3">03-WAITLIST</span>
+                    <div className="font-soulcraft font-[700] text-[48px] sm:text-[72px] md:text-[96px] lg:text-[72px] xl:text-[96px] leading-[84%] tracking-[-1.92px] mb-6">
                         <span className="block">JOIN THE</span>
                         <span className="block"><span className="text-[#FF2600]">BLKBAR</span> SQUAD</span>
                     </div>
 
-                    <span className="block text-[13px] font-inter mb-6">When you join the waitlist you get</span>
+                    <span className="block text-[11px] sm:text-[13px] font-inter mb-6">When you join the waitlist you get</span>
 
                     <div className="flex flex-col gap-4">
                         {[
@@ -115,17 +106,17 @@ export default function Waitlist() {
                             'Get prizes like skull caps and hair products in our giveaways',
                         ].map((benefit, i) => (
                             <div key={i} className="flex flex-row items-center gap-4">
-                                <div className="h-12 w-12 shrink-0 rounded-full bg-[#FF2600] flex items-center justify-center">
-                                    <span className="font-soulcraft text-[24px] leading-none text-white">{i + 1}</span>
+                                <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 rounded-full bg-[#FF2600] flex items-center justify-center">
+                                    <span className="font-soulcraft text-[18px] sm:text-[24px] leading-none text-white">{i + 1}</span>
                                 </div>
-                                <span className="font-inter text-[14px]">{benefit}</span>
+                                <span className="font-inter text-[12px] sm:text-[14px]">{benefit}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Right: form card */}
-                <div className="flex items-center justify-center shrink-0">
+                <div className="w-full sm:w-auto flex items-center justify-center shrink-0">
                     <WaitlistForm />
                 </div>
 

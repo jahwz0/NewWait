@@ -28,7 +28,7 @@ function Column({ quotes, speed, delay }) {
     return (
         <div className="overflow-hidden flex-1 h-full">
             <div
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-4"
                 style={{
                     animation: `fall-loop ${speed} linear infinite`,
                     animationDelay: delay,
@@ -38,7 +38,7 @@ function Column({ quotes, speed, delay }) {
                     <p
                         key={i}
                         className={`font-inter text-black leading-[120%] ${
-                            q.big ? "text-[20px] font-bold" : "text-[12px] font-normal"
+                            q.big ? "text-[9px] sm:text-[20px] font-bold" : "text-[9px] sm:text-[12px] font-normal"
                         }`}
                     >
                         {q.text}
@@ -51,18 +51,18 @@ function Column({ quotes, speed, delay }) {
 
 export default function Community() {
     return (
-        <div className="bg-[#FFD738] border-2 relative overflow-hidden " style={{ height: "320px" }}>
+        <div className="bg-[#FFD738] border-2 relative overflow-hidden h-[100px]">
 
-            {/* Heading — sits bottom-left, width capped to keep columns clear */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-10 z-10 w-500">
-                <div className="font-soulcraft text-black text-[96px] leading-[84%] tracking-[-3px]">
+            {/* Heading */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-10 z-10 max-w-[200px] md:max-w-[500px]">
+                <div className="font-soulcraft text-black text-[16px] sm:text-[60px] md:text-[40px] leading-[84%] tracking-[-1px] sm:tracking-[-2px] md:tracking-[-3px]">
                     <span className="block">THE COMMUNITY</span>
                     <span>LOVES OUR IDEA</span>
                 </div>
             </div>
 
-            {/* Falling columns start right of the heading */}
-            <div className="absolute top-0 right-0 bottom-0 left-250 flex flex-row gap-10 overflow-hidden py-6 pr-10">
+            {/* Falling columns */}
+            <div className="absolute top-0 right-0 bottom-0 left-50 sm:left-95 md:left-100 flex flex-row gap-4 sm:gap-10 overflow-hidden py-6 pr-4 sm:pr-10">
                 {columns.map((col, i) => (
                     <Column key={i} quotes={col.quotes} speed={col.speed} delay={col.delay} />
                 ))}
