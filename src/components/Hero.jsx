@@ -10,7 +10,7 @@ function scrollTo(id) {
 export default function hero(){
     return(
         <>
-        <div className="flex flex-col sm:flex-row sm:w-full overflow-hidden sm:ml-[20px] md:ml-[0px] items-stretch">
+        <div className="flex flex-col sm:flex-row sm:w-full overflow-hidden sm:ml-[20px] md:ml-[0px] items-stretch 2xl:min-h-[600px]">
 
             {/* Left: text + description + buttons */}
             <div className="flex flex-col">
@@ -43,9 +43,9 @@ export default function hero(){
             </div>
 
             {/* Right: images side by side, stretch to match left column height */}
-            <div className="flex flex-row flex-1 -ml-[10px]">
-                <Image src="/images/blackplaceholder.png" alt="woman" width={370} height={980} className="object-cover object-top  h-[250px] sm:h-[250px] md:h-full w-auto" />
-                <Image src="/images/redplaceholder.png" alt="man" width={370} height={980} className="object-cover object-top h-[250px] sm:h-[250px] md:h-full w-auto md:hidden xl:inline-flex" />
+            <div className="flex flex-row flex-1 -ml-[10px]]">
+                <Image src="/images/blackplaceholder.png" alt="woman" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full 2xl:h-150 w-auto" />
+                <Image src="/images/redplaceholder.png" alt="man" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full 2xl:h-150 w-auto md:hidden xl:inline-flex" />
             </div>
 
         </div>
