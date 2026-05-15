@@ -63,8 +63,8 @@ export default function Footer(){
 
             {/* Bottom bar */}
             <div className="border-t border-white/20 px-6 sm:px-[60px] py-4 flex flex-row justify-center gap-12">
-                <a className="font-inter text-[12px] text-white/60 hover:text-white">Privacy</a>
-                <a className="font-inter text-[12px] text-white/60 hover:text-white">Terms</a>
+                <a href="/business/BLKBARLtdPrivacyPolicy.html" className="font-inter text-[12px] text-white/60 hover:text-white">Privacy</a>
+                <a href="/business/BLKBARLtdTermsandConditions.html" className="font-inter text-[12px] text-white/60 hover:text-white">Terms</a>
                 <a className="font-inter text-[12px] text-white/60 hover:text-white">Cookies</a>
             </div>
 
