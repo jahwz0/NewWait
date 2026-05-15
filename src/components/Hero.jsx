@@ -10,11 +10,11 @@ export default function hero(){
 
             {/* Left: text + description + buttons */}
             <div className="flex flex-col">
-                <div className="text-center sm:text-left ml-[20px] max-w-[320px] sm:max-w-[350px] lg:max-w-[650px] pb-2.5 lg:pb-10">
-                    <span className="block font-soulcraft text-black text-[36px] sm:text-[50px] md:text-[70px] lg:text-[90px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
+                <div className="text-center sm:text-left ml-[20px] max-w-[320px] sm:max-w-[350px] lg:max-w-[540px] pb-2.5 lg:pb-10">
+                    <span className="block font-soulcraft text-black text-[36px] sm:text-[50px] md:text-[70px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
                         WHY STRUGGLE FOR YOUR</span>
 
-                    <span className="block font-soulcraft text-[#FF2600] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[90px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
+                    <span className="block font-soulcraft text-[#FF2600] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
                         NEXT LOOK</span>
 
                     {/* <span className=" font-soulcraft text-[#F5C518] text-[90px] font-[700] leading-[95px]">?</span> */}
@@ -41,7 +41,7 @@ export default function hero(){
             {/* Right: images side by side, stretch to match left column height */}
             <div className="flex flex-row flex-1 -ml-[10px]">
                 <Image src="/images/blackplaceholder.png" alt="woman" width={370} height={980} className="object-cover object-top  h-[250px] sm:h-[250px] md:h-full w-auto" />
-                <Image src="/images/redplaceholder.png" alt="man" width={370} height={980} className="object-cover object-top h-[250px] sm:h-[250px] md:h-full w-auto md:hidden" />
+                <Image src="/images/redplaceholder.png" alt="man" width={370} height={980} className="object-cover object-top h-[250px] sm:h-[250px] md:h-full w-auto md:hidden xl:inline-flex" />
             </div>
 
         </div>
