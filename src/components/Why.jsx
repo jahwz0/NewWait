@@ -34,12 +34,12 @@ export default function Why(){
 
             <div className="text-left sm:max-w-[320px] md:max-w-[650px] sm:pb-6">
                 <span className="block font-inter text-[13px] font-[700] uppercase tracking-widest mb-2">WHY US</span>
-                <span className="block font-soulcraft text-black text-[26px] sm:text-[50px] md:text-[60px] lg:text-[90px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
+                <span className="block font-soulcraft text-black text-[26px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
     WE ARE FOR THE</span>
 
                 {/* Animated heading — slides up out, then new text slides up in */}
                 <span
-                    className="block font-soulcraft text-[#FF2600] text-[26px] sm:text-[50px] md:text-[60px] lg:text-[90px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]"
+                    className="block font-soulcraft text-[#FF2600] text-[26px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]"
                     style={{ animation: leaving ? 'slideUpOut 0.35s ease forwards' : 'slideUpIn 0.4s ease forwards' }}
                 >
                     {isStylist ? "STYLISTS/BARBERS" : "CLIENTS"}

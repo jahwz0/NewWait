@@ -1,4 +1,10 @@
+'use client'
+
 import Image from "next/image"
+
+function scrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function Footer(){
     return(
@@ -34,15 +40,15 @@ export default function Footer(){
                     <div className="flex flex-row gap-10 md:gap-16 lg:gap-24">
                         <div className="flex flex-col gap-4 sm:gap-5 w-28 lg:w-36">
                             <span className="font-inter font-[700] text-[12px] uppercase tracking-widest sm:hidden">Product</span>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">For clients</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">For stylists/barbers</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">How it works</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">FAQ</a>
+                            <button onClick={() => scrollTo('why')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">For clients</button>
+                            <button onClick={() => scrollTo('why')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">For stylists/barbers</button>
+                            <button onClick={() => scrollTo('sneak')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">How it works</button>
+                            <button onClick={() => scrollTo('faq')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">FAQ</button>
                         </div>
                         <div className="flex flex-col gap-4 sm:gap-5 w-28 lg:w-36">
                             <span className="font-inter font-[700] text-[12px] uppercase tracking-widest sm:hidden">Company</span>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">About</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">Contact</a>
+                            <button onClick={() => scrollTo('why')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">About</button>
+                            <button onClick={() => scrollTo('waitlist')} className="font-inter text-[13px] text-white/70 hover:text-white text-left">Contact</button>
                         </div>
                         <div className="flex flex-col gap-4 sm:gap-5 w-28 lg:w-36">
                             <span className="font-inter font-[700] text-[12px] uppercase tracking-widest sm:hidden">Get In Touch</span>
@@ -63,8 +69,8 @@ export default function Footer(){
 
             {/* Bottom bar */}
             <div className="border-t border-white/20 px-6 sm:px-[60px] py-4 flex flex-row justify-center gap-12">
-                <a className="font-inter text-[12px] text-white/60 hover:text-white">Privacy</a>
-                <a className="font-inter text-[12px] text-white/60 hover:text-white">Terms</a>
+                <a href="/business/BLKBARLtdPrivacyPolicy.html" className="font-inter text-[12px] text-white/60 hover:text-white">Privacy</a>
+                <a href="/business/BLKBARLtdTermsandConditions.html" className="font-inter text-[12px] text-white/60 hover:text-white">Terms</a>
                 <a className="font-inter text-[12px] text-white/60 hover:text-white">Cookies</a>
             </div>
 

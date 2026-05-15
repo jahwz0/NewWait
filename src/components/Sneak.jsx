@@ -16,14 +16,14 @@ export default function Sneak(){
     const next = () => setIndex(i => (i + 1) % previews.length)
 
     return(
-        <div id="sneak" className="bg-black flex flex-col sm:flex-row md:flex-col p-5 sm:p-20 md:p-5">
+        <div id="sneak" className="bg-black flex flex-col sm:flex-row md:flex-col pt-[20px] sm:pt-[85px] pl-[20px] pb-[20px] sm:pb-[85px]">
 
             {/* Left: heading + description */}
-            <div className="sm:pr-[100px]">
+            <div className="sm:pr-[100px] md:pr-0">
                 <div className="font-inter font-[500] text-[12px] leading-[145%] pb-[13px]">
                     <span className="text-white">02- SNEAK PEAK</span>
                 </div>
-                <div className="font-soulcraft text-[36px] md:text-[70px] lg:text-[96px] leading-[84%] tracking-[-4px] flex flex-row items-center gap-4 lg:block">
+                <div className="font-soulcraft text-[36px] md:text-[70px] lg:text-[70px] xl:text-[96px] leading-[84%] tracking-[-4px] flex flex-row items-center gap-4">
                     <span className="text-white whitespace-nowrap">IT'S JUST</span>
                     <div className="flex flex-row gap-1">
                         <span className="text-white">A</span><span className="text-[#FFD738]">FEED</span>
