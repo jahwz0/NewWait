@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 function scrollTo(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -22,7 +23,10 @@ export default function Nav(){
         </header>
 
         <nav className="flex items-center justify-between px-6 py-4">
-            <span className="text-[36px] lg:text-[56px] font-avant-garde font-bold leading-none">BLKBAR</span>
+            <div className="flex items-center gap-3">
+                <Image src="/images/outlinedlogo.png" alt="BLKBAR outlined logo" width={58} height={58} />
+                <span className="text-[36px] lg:text-[56px] font-avant-garde font-bold leading-none">BLKBAR</span>
+            </div>
 
             {/* Desktop: nav links */}
             <ul className="hidden sm:flex items-center gap-8 text-[13px] font-semibold">
