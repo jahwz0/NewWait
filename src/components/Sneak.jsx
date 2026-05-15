@@ -16,7 +16,7 @@ export default function Sneak(){
     const next = () => setIndex(i => (i + 1) % previews.length)
 
     return(
-        <div id="sneak" className="bg-black flex flex-col sm:flex-row md:flex-col pt-[20px] sm:pt-[85px] pl-[20px]">
+        <div id="sneak" className="bg-black flex flex-col sm:flex-row md:flex-col pt-[20px] sm:pt-[85px] pl-[20px] pb-[20px] sm:pb-[85px]">
 
             {/* Left: heading + description */}
             <div className="sm:pr-[100px] md:pr-0">

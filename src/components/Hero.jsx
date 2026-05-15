@@ -1,7 +1,11 @@
+'use client'
+
 import Image from "next/image"
 import { IoMdStar } from "react-icons/io";
 
-
+function scrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
 
 export default function hero(){
     return(
@@ -28,10 +32,10 @@ export default function hero(){
                         </span>
                     </div>
                     <div className="flex flex-row justify-center sm:justify-start gap-5 mt-[12px]">
-                        <button className="bg-black text-white md:text-[12px] text-[9px] font-semibold px-3 sm:px-6 py-1 sm:py-3 rounded-[12px]">
+                        <button onClick={() => scrollTo('waitlist')} className="bg-black text-white md:text-[12px] text-[9px] font-semibold px-3 sm:px-6 py-1 sm:py-3 rounded-[12px]">
                             JOIN THE WAITLIST
                         </button>
-                        <button className="bg-transparent text-black border-1 border-black md:text-[12px] text-[9px] font-semibold px-3 md:px-6 py-1 md:py-3 rounded-[12px]">
+                        <button onClick={() => scrollTo('sneak')} className="bg-transparent text-black border-1 border-black md:text-[12px] text-[9px] font-semibold px-3 md:px-6 py-1 md:py-3 rounded-[12px]">
                             SEE HOW IT WORKS
                         </button>
                     </div>
