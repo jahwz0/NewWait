@@ -1,15 +1,12 @@
-import { neon } from "@netlify/neon";
+import { db } from "../../db/index.js";
+import { waitlist } from "../../db/schema.js";
+import { eq } from "drizzle-orm";
 import { Resend } from "resend";
 
-const sql = neon();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-/* ----------------------------- CONFIG ----------------------------- */
-
-const MAX_REQUESTS_PER_IP = 5; // Per hour
+const MAX_REQUESTS_PER_IP = 5;
 const requestCounts = new Map();
-
-/* ----------------------------- Email Templates ----------------------------- */
 
 const baseWrapper = (content, email) => `
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:40px 0;">
@@ -99,8 +96,6 @@ const stylistEmailTemplate = (email) => baseWrapper(`
   </p>
 `, email);
 
-/* ----------------------------- Helper Functions ----------------------------- */
-
 const isValidEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email) && email.length <= 255;
@@ -130,8 +125,6 @@ const checkRateLimit = (ip) => {
   requestCounts.set(ip, ipRequests);
   return true;
 };
-
-/* ----------------------------- Netlify Function ----------------------------- */
 
 export const handler = async (event) => {
   const headers = {
@@ -208,11 +201,11 @@ export const handler = async (event) => {
   }
 
   try {
-    const existing = await sql`
-      SELECT email FROM Black_Bar_Backend.waitlist
-      WHERE email = ${email}
-      LIMIT 1
-    `;
+    const existing = await db
+      .select({ email: waitlist.email })
+      .from(waitlist)
+      .where(eq(waitlist.email, email))
+      .limit(1);
 
     if (existing.length > 0) {
       return {
@@ -222,11 +215,11 @@ export const handler = async (event) => {
       };
     }
 
-    await sql`
-      INSERT INTO Black_Bar_Backend.waitlist
-        (email, user_type, privacy_consent, consent_timestamp, created_at)
-      VALUES (${email}, ${user_type}, ${privacy_consent}, NOW(), NOW())
-    `;
+    await db.insert(waitlist).values({
+      email,
+      userType: user_type,
+      privacyConsent: privacy_consent,
+    });
 
     const subject =
         user_type === "client"

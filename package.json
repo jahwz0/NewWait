@@ -9,8 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.1.0",
-    "@netlify/neon": "^0.1.2",
+    "@netlify/database": "^1.0.0",
+    "drizzle-orm": "^1.0.0-beta.22",
     "next": "16.2.6",
     "nodemailer": "^8.0.7",
     "react": "19.2.4",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
+    "drizzle-kit": "^1.0.0-beta.22",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4"

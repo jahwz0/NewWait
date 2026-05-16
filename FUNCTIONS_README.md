@@ -4,7 +4,8 @@
 
 ### 1. Install dependencies
 ```bash
-npm install @netlify/neon nodemailer
+npm install @netlify/database drizzle-orm@beta
+npm install -D drizzle-kit@beta
 ```
 
 ### 2. Environment variables
@@ -12,16 +13,20 @@ Set these in your Netlify dashboard (Site → Environment variables):
 
 | Variable             | Description                          |
 |----------------------|--------------------------------------|
-| `NETLIFY_DATABASE_URL` | Your Neon connection string        |
-| `GMAIL_USER`         | Gmail address used to send emails    |
-| `GMAIL_APP_PASSWORD` | Gmail App Password (not your login)  |
+| `RESEND_API_KEY`     | Resend API key for sending emails    |
 | `BASE_URL`           | Your site URL e.g. https://blkbar.co |
 
 ### 3. File structure
 ```
 your-new-repo/
 ├── netlify.toml
+├── drizzle.config.ts
+├── db/
+│   ├── schema.ts
+│   └── index.ts
 ├── netlify/
+│   ├── database/
+│   │   └── migrations/
 │   └── functions/
 │       ├── add-to-waitlist.mjs
 │       └── unsubscribe.mjs
