@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import sql from '@/lib/db';
+import getSQL from '@/lib/db';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -86,6 +86,7 @@ export async function POST(request) {
   }
 
   try {
+    const sql = getSQL();
     const existing = await sql`SELECT id FROM waitlist WHERE email = ${email}`;
     if (existing.length > 0) {
       return NextResponse.json({ error: 'This email is already on the waitlist.' }, { status: 400 });
