@@ -1,6 +1,6 @@
-import { neon } from "@netlify/neon";
-
-const sql = neon();
+import { db } from "../../db/index.js";
+import { mailingList } from "../../db/schema.js";
+import { eq } from "drizzle-orm";
 
 export const handler = async (event) => {
   const token = event.queryStringParameters?.token;
@@ -13,12 +13,11 @@ export const handler = async (event) => {
   }
 
   try {
-    const result = await sql`
-      UPDATE Black_Bar_Backend.Mailing_List
-      SET unsubscribed_at = NOW()
-      WHERE unsubscribe_token = ${token}
-      RETURNING email
-    `;
+    const result = await db
+      .update(mailingList)
+      .set({ unsubscribedAt: new Date() })
+      .where(eq(mailingList.unsubscribeToken, token))
+      .returning({ email: mailingList.email });
 
     if (result.length === 0) {
       return {
