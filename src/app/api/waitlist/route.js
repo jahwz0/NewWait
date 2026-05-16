@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import sql from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // In-memory rate limiting: IP -> { count, resetAt }
