@@ -7,6 +7,7 @@
   font-weight: 700;
   font-display: swap;
   src: url("/fonts/Soulcraft.ttf") format("truetype");
+  font-variation-settings: "wdth" 1, "slnt" 0;
 }
 
 @font-face {

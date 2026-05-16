@@ -55,7 +55,7 @@ export default function Community() {
 
             {/* Heading */}
             <div className="absolute top-1/2 -translate-y-1/2 left-10 z-10 max-w-[200px] md:max-w-[500px]">
-                <div className="font-soulcraft text-black text-[16px] sm:text-[60px] md:text-[40px] leading-[84%] tracking-[-1px] sm:tracking-[-2px] md:tracking-[-3px]">
+                <div className="font-soulcraft text-black text-[26px] sm:text-[60px] md:text-[40px] leading-[20px] md:leading-[30px] lg:leading-[30px] sm:tracking-[1px]">
                     <span className="block">THE COMMUNITY</span>
                     <span>LOVES OUR IDEA</span>
                 </div>

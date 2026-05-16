@@ -23,11 +23,11 @@ export default function Sneak(){
                 <div className="font-inter font-[500] text-[12px] leading-[145%] pb-[13px]">
                     <span className="text-white">02- SNEAK PEAK</span>
                 </div>
-                <div className="font-soulcraft text-[36px] md:text-[70px] lg:text-[70px] xl:text-[96px] leading-[84%] tracking-[-4px] flex flex-row items-center gap-4">
-                    <span className="text-white whitespace-nowrap">IT'S JUST</span>
-                    <div className="flex flex-row gap-1">
-                        <span className="text-white">A</span><span className="text-[#FFD738]">FEED</span>
-                        <Image src="/images/iphone.png" alt="iphone" width={96} height={96} className="h-[34px] sm:h-full md:h-[70px] w-auto" />
+                <div className="font-soulcraft flex flex-row items-center gap-4 text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px] ">
+                    <span className="text-white">IT'S JUST A</span>
+                    <div className="flex flex-row gap-2">
+                    <span className="text-[#FFD738] ml-[-6px]">FEED</span>
+                        {/* <Image src="/images/iphone.png" alt="iphone" width={96} height={96} className="h-[34px] sm:h-full md:h-[70px] w-auto pb-[23x]" /> */}
                     </div>
                 </div>
                 <div className="max-w-[350px] md:max-w-[500px] font-inter text-[9px] sm:text-[12px] leading-[145%] text-white pt-3 sm:pt-0 md:pt-5 md:pb-5 text-center md:text-left mx-auto md:mx-0">
@@ -40,7 +40,7 @@ export default function Sneak(){
 
                 {/* Mobile: single card + arrows */}
                 <div className="sm:hidden flex flex-col items-center gap-3 text-white text-[9px] text-center">
-                    <Image src={previews[index].img} alt="iphone app preview" width={0} height={0} sizes="100vw" className="w-[180px] h-auto" />
+                    <Image src={previews[index].img} alt="iphone app preview" width={0} height={0} sizes="100vw" loading="eager" className="w-[180px] h-auto" />
                     <p className="max-w-[260px]">{previews[index].desc}</p>
                     <div className="flex items-center gap-6 mt-1">
                         <button onClick={prev} className="text-white text-[20px] leading-none">&#8592;</button>
@@ -52,7 +52,7 @@ export default function Sneak(){
                 {/* Desktop: all three side by side */}
                 <div className="hidden sm:flex flex-row gap-[26px] justify-center text-center">
                     {previews.map((p, i) => (
-                        <div key={i} className="text-white w-[150px] md:w-[200px] lg:w-[380px] text-[9px] lg:text-[12px]">
+                        <div key={i} className="text-white w-[150px] md:w-[200px] lg:w-[380px] text-[9px] md:text-[12px]">
                             <Image src={p.img} alt="iphone app preview" width={0} height={0} sizes="100vw" className="w-full h-auto" />
                             <p className="mt-2">{p.desc}</p>
                         </div>

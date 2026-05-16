@@ -52,9 +52,9 @@ export default function Footer(){
                         </div>
                         <div className="flex flex-col gap-4 sm:gap-5 w-28 lg:w-36">
                             <span className="font-inter font-[700] text-[12px] uppercase tracking-widest sm:hidden">Get In Touch</span>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">Team@BLKBAR.com</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">@BLKBAR on Instagram</a>
-                            <a className="font-inter text-[13px] text-white/70 hover:text-white">@BLKBAR on Tiktok</a>
+                            <a className="font-inter text-[13px] text-white/70 hover:text-white" href="mailto:Team@BLKBAR.com">Team@BLKBAR.com</a>
+                            <a className="font-inter text-[13px] text-white/70 hover:text-white" href="https://www.instagram.com/blkbar1?igsh=MXE4MHltM2FvMzhwbA%3D%3D&utm_source=qr">@BLKBAR on Instagram</a>
+                            <a className="font-inter text-[13px] text-white/70 hover:text-white" href="https://www.tiktok.com/@blkbar3?_r=1&_t=ZN-96PXWnLfWPW">@BLKBAR on Tiktok</a>
                         </div>
                     </div>
                 </div>

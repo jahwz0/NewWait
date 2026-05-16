@@ -10,23 +10,23 @@ function scrollTo(id) {
 export default function hero(){
     return(
         <>
-        <div className="flex flex-col sm:flex-row sm:w-full overflow-hidden sm:ml-[20px] md:ml-[0px] items-stretch 2xl:min-h-[600px]">
+        <div className="flex flex-col sm:flex-row sm:w-full overflow-hidden sm:ml-[20px] items-stretch ">
 
             {/* Left: text + description + buttons */}
-            <div className="flex flex-col">
-                <div className="text-center sm:text-left ml-[20px] max-w-[320px] sm:max-w-[350px] lg:max-w-[540px] pb-2.5 lg:pb-10">
-                    <span className="block font-soulcraft text-black text-[36px] sm:text-[50px] md:text-[70px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
+            <div className="flex flex-col items-center md:items-start">
+                <div className="text-center md:text-left max-w-[320px] sm:max-w-[350px] pb-2.5 lg:pb-10">
+                    <span className="block font-soulcraft text-black text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
                         WHY STRUGGLE FOR YOUR</span>
 
-                    <span className="block font-soulcraft text-[#FF2600] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[80px] font-[700] sm:leading-[50px] md:leading-[75px] leading-[35px]  tracking-[-1] sm:tracking-[-2] md:tracking-[-3.12px]">
+                    <span className="block font-soulcraft text-[#FF2600] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] md:leading-[60px]  leading-[30px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
                         NEXT LOOK</span>
 
                     {/* <span className=" font-soulcraft text-[#F5C518] text-[90px] font-[700] leading-[95px]">?</span> */}
                 </div>
 
-                <div className="sm:ml-[14px] mb-2">
-                    <div className="max-w-[300px] text-center ml-[20px] sm:ml-0 sm:text-left">
-                        <span className="text-[10px] leading-[5%] sm:text-[13px] md:text-[13px]">BLKBAR is a social marketplace for black hair where stylists
+                <div className="sm:ml-[14px] mb-2 md:pb-5">
+                    <div className="max-w-[300px] text-center ml-[20px] sm:ml-0 sm:text-left md:pb-5">
+                        <span className="text-[10px] leading-[-50px] sm:text-[13px] md:text-[15px]">BLKBAR is a social marketplace for black hair where stylists
                             and barbers can post their craft, clients looking for a barber
                             or stylist can discover and book their service in just a few taps.
                         </span>
@@ -43,9 +43,9 @@ export default function hero(){
             </div>
 
             {/* Right: images side by side, stretch to match left column height */}
-            <div className="flex flex-row flex-1 -ml-[10px]]">
-                <Image src="/images/blackplaceholder.png" alt="woman" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full 2xl:h-150 w-auto" />
-                <Image src="/images/redplaceholder.png" alt="man" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full 2xl:h-150 w-auto md:hidden xl:inline-flex" />
+            <div className="flex items-center md:items-end flex-row flex-1 justify-center md:justify-start 2xl:justify-center -ml-[10px] pt-[20px] xl:max-w-[450px] 2xl:max-w-full">
+                <Image src="/images/black1.png" alt="woman" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full w-auto" />
+                <Image src="/images/red1.png" alt="man" width={370} height={980} className="object-cover object-top h-62.5 sm:h-62.5 md:h-full 2xl:h-150 w-auto md:hidden xl:inline-flex" />
             </div>
 
         </div>

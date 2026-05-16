@@ -3,10 +3,10 @@
 import { useState } from "react"
 
 const faqs = [
-    { q: "WHEN DOES THE APP LAUNCH", a: "The app will be launching in June. Sign up to our waitlist to receive notifications and updates on the development of the app." },
-    { q: "IS BLKBAR FREE FOR STYLISTS", a: "Yes, joining and listing your services on BLKBAR is completely free. We only take a small commission on completed bookings." },
-    { q: "WHAT IF A CLIENT DOESN'T SHOW UP", a: "Because clients pay upfront through the app, you're protected. No-shows don't mean lost money." },
-    { q: "HOW DO I GET A PAYMENT FROM A CLIENT", a: "Payments are processed directly through the app. Once a booking is completed, funds are released to your account." },
+    { q: "How does BLKBAR work?", a: "BLKBAR is a marketplace app that connects you with talented hairstylists and barbers near you. Browse stylist profiles, view their work, check availability, and book your appointment — all in one place. Once booked, you'll receive a confirmation and can track everything through the app." },
+    { q: "I'm a stylist — how do I get clients through BLKBAR?", a: "Create your profile, showcase your portfolio, set your services and pricing, and you're live. Clients in your area can discover and book you directly. You get paid through the app with no chasing invoices — BLKBAR handles the transaction so you can focus on the work." },
+    { q: "Is it free to use?", a: "BLKBAR is free to download and browse. Clients pay for bookings through the app. Stylists only pay when they earn — a small platform fee is taken per completed booking, with no upfront or monthly subscription costs." },
+    { q: "When does BLKBAR launch?", a: "We're putting the finishing touches on the app right now. Join the waitlist to be first in line when we go live — waitlisted stylists and clients from our launch community get priority access and early supporter perks." },
 ]
 
 export default function Faq(){
@@ -17,10 +17,12 @@ export default function Faq(){
 
             {/* Left */}
             <div className="text-black sm:min-w-85">
-                <span className="block font-inter text-[11px] sm:text-[12px] leading-[145%]">04-FAQ</span>
-                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">FREQUENTLY</span>
-                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">ASKED</span>
-                <span className="block font-soulcraft text-[48px] sm:text-[72px] md:text-[96px] leading-[84%] tracking-[-2px] sm:tracking-[-4px]">QUESTIONS</span>
+                <span className="block font-inter text-[11px] sm:text-[12px] leading-[40px]">04-FAQ</span>
+                <div className="font-soulcraft text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
+                    <span className="block">FREQUENTLY</span>
+                    <span className="block">ASKED</span>
+                    <span className="block">QUESTIONS</span>
+                </div>
                 <span className="block font-inter text-[11px] sm:text-[12px] leading-[145%] mt-4">What do you want to know?</span>
             </div>
 
