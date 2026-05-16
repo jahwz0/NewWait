@@ -1,12 +1,13 @@
 import { neon } from "@netlify/neon";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 const sql = neon();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 /* ----------------------------- CONFIG ----------------------------- */
 
 const MAX_REQUESTS_PER_IP = 5; // Per hour
-const requestCounts = new Map(); // In-memory rate limiting (use Redis for production)
+const requestCounts = new Map();
 
 /* ----------------------------- Email Templates ----------------------------- */
 
@@ -17,7 +18,7 @@ const baseWrapper = (content, email) => `
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;padding:32px;font-family:Arial, sans-serif;">
         <tr>
           <td align="center" style="padding-bottom:24px;">
-            <img src="https://blkbar.co/bblogo.png" alt="BLKBAR" width="120" />
+            <img src="https://blkbar.co/img/bblogo.png" alt="BLKBAR" width="180" />
           </td>
         </tr>
         <tr>
@@ -98,18 +99,6 @@ const stylistEmailTemplate = (email) => baseWrapper(`
   </p>
 `, email);
 
-/* ----------------------------- Nodemailer Setup ----------------------------- */
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
-
 /* ----------------------------- Helper Functions ----------------------------- */
 
 const isValidEmail = (email) => {
@@ -119,9 +108,9 @@ const isValidEmail = (email) => {
 
 const getClientIP = (event) => {
   return (
-    event.headers["x-forwarded-for"]?.split(",")[0].trim() ||
-    event.headers["client-ip"] ||
-    "unknown"
+      event.headers["x-forwarded-for"]?.split(",")[0].trim() ||
+      event.headers["client-ip"] ||
+      "unknown"
   );
 };
 
@@ -240,18 +229,18 @@ export const handler = async (event) => {
     `;
 
     const subject =
-      user_type === "client"
-        ? "You're in. Let's change how we do hair."
-        : "Ready to fill your chair? 🪑";
+        user_type === "client"
+            ? "You're in. Let's change how we do hair."
+            : "Ready to fill your chair? 🪑";
 
     const html =
-      user_type === "client"
-        ? clientEmailTemplate(email)
-        : stylistEmailTemplate(email);
+        user_type === "client"
+            ? clientEmailTemplate(email)
+            : stylistEmailTemplate(email);
 
     try {
-      await transporter.sendMail({
-        from: `"BLKBAR" <${process.env.GMAIL_USER}>`,
+      await resend.emails.send({
+        from: "BLKBAR <Team@blkbar.co>",
         to: email,
         subject,
         html,
