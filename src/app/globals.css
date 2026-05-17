@@ -64,6 +64,12 @@
   to   { opacity: 0; transform: translateY(80px); }
 }
 
+/* counter-skew to straighten the Soulcraft italic */
+.font-soulcraft {
+  display: inline-block;
+  transform: skewX(-12deg);
+}
+
 html {
   scroll-behavior: smooth;
 }
