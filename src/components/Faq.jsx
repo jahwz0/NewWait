@@ -18,7 +18,7 @@ export default function Faq(){
             {/* Left */}
             <div className="text-black sm:min-w-85">
                 <span className="block font-inter text-[11px] sm:text-[12px] leading-[40px]">04-FAQ</span>
-                <div className="font-soulcraft text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
+                <div className="font-soulcraft text-[26px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-7 sm:leading-12 md:leading-15 lg:leading-20 tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
                     <span className="block">FREQUENTLY</span>
                     <span className="block">ASKED</span>
                     <span className="block">QUESTIONS</span>

@@ -138,7 +138,7 @@ export default function Waitlist() {
                 {/* Left: heading + benefits */}
                 <div className="flex flex-col flex-1">
                     <span className="font-inter font-[500] text-[12px] leading-[145%] pb-[13px]">03-WAITLIST</span>
-                    <div className="font-soulcraft font-[700] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px] ">
+                    <div className="font-soulcraft font-[700] text-[26px] sm:text-[50px] md:text-[70px] lg:text-[96px] leading-7 sm:leading-12 md:leading-15 lg:leading-20 tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px] ">
                         <span className="block">JOIN THE</span>
                         <span className="block"><span className="text-[#FF2600]">BLKBAR</span> SQUAD</span>
                     </div>

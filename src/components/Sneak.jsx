@@ -23,7 +23,7 @@ export default function Sneak(){
                 <div className="font-inter font-[500] text-[12px] leading-[145%] pb-[13px]">
                     <span className="text-white">02- SNEAK PEAK</span>
                 </div>
-                <div className="font-soulcraft flex flex-row items-center gap-4 text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px] ">
+                <div className="font-soulcraft flex flex-row items-center gap-4 text-[26px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-7 sm:leading-12 md:leading-15 lg:leading-20 tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px] ">
                     <span className="text-white">IT'S JUST A</span>
                     <div className="flex flex-row gap-2">
                     <span className="text-[#FFD738] ml-[-6px]">FEED</span>

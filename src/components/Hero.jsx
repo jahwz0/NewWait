@@ -15,10 +15,10 @@ export default function hero(){
             {/* Left: text + description + buttons */}
             <div className="flex flex-col items-center md:items-start">
                 <div className="text-center md:text-left max-w-[320px] sm:max-w-[350px] pb-2.5 lg:pb-10">
-                    <span className="block font-soulcraft text-black text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-[30px] md:leading-[60px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
+                    <span className="block font-soulcraft text-black text-[26px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-7 sm:leading-12 md:leading-15 lg:leading-20 tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
                         WHY STRUGGLE FOR YOUR</span>
 
-                    <span className="block font-soulcraft text-[#FF2600] text-[36px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] md:leading-[60px]  leading-[30px] lg:leading-[80px] tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
+                    <span className="block font-soulcraft text-[#FF2600] text-[26px] sm:text-[50px] md:text-[70px] lg:text-[96px] font-[700] leading-7 sm:leading-12 md:leading-15 lg:leading-20 tracking-[-2%] sm:tracking-[-1.92px] md:tracking-[-1.92px]">
                         NEXT LOOK</span>
 
                     {/* <span className=" font-soulcraft text-[#F5C518] text-[90px] font-[700] leading-[95px]">?</span> */}
