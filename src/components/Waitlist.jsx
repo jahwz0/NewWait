@@ -6,9 +6,41 @@ function WaitlistForm() {
     const [privacy, setPrivacy] = useState(false)
     const [emails, setEmails] = useState(false)
     const [email, setEmail] = useState('')
+    const [status, setStatus] = useState(null) // null | 'loading' | 'success' | 'error'
+    const [message, setMessage] = useState('')
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        if (!privacy) return setMessage('You must agree to the privacy policy.')
+
+        setStatus('loading')
+        setMessage('')
+
+        try {
+            const res = await fetch('/.netlify/functions/add-to-waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, role, privacy_consent: privacy }),
+            })
+            const data = await res.json()
+            if (res.ok) {
+                setStatus('success')
+                setMessage(data.message ?? "You're on the list. We'll be in touch.")
+                setEmail('')
+                setPrivacy(false)
+                setEmails(false)
+            } else {
+                setStatus('error')
+                setMessage(data.error ?? 'Something went wrong.')
+            }
+        } catch {
+            setStatus('error')
+            setMessage('Network error. Please try again.')
+        }
+    }
 
     return (
-        <div className="bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col gap-5 w-full sm:w-80 md:w-150 lg:w-100 xl:w-150">
+        <form onSubmit={handleSubmit} className="bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col gap-5 w-full sm:w-80 md:w-150 lg:w-100 xl:w-150">
 
             {/* Email input */}
             <div className="flex flex-col gap-1">
@@ -18,6 +50,7 @@ function WaitlistForm() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="You@email.com"
+                    required
                     className="bg-transparent border-b border-white/30 text-white text-[16px] sm:text-[22px] font-inter pb-2 outline-none placeholder:text-white/30 focus:border-white/70 transition-colors"
                 />
             </div>
@@ -25,6 +58,7 @@ function WaitlistForm() {
             {/* Role toggle */}
             <div className="flex flex-row gap-3">
                 <button
+                    type="button"
                     onClick={() => setRole('client')}
                     className={`flex-1 py-2 sm:py-3 rounded-full font-inter text-[11px] sm:text-[12px] font-bold uppercase tracking-widest transition-colors ${
                         role === 'client'
@@ -35,6 +69,7 @@ function WaitlistForm() {
                     Client
                 </button>
                 <button
+                    type="button"
                     onClick={() => setRole('stylist')}
                     className={`flex-1 py-2 sm:py-3 rounded-full font-inter text-[11px] sm:text-[12px] font-bold uppercase tracking-widest transition-colors ${
                         role === 'stylist'
@@ -58,12 +93,23 @@ function WaitlistForm() {
                 </label>
             </div>
 
+            {/* Feedback message */}
+            {message && (
+                <p className={`font-inter text-[12px] ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {message}
+                </p>
+            )}
+
             {/* Submit */}
-            <button className="w-full bg-[#FF2600] text-white font-inter text-[12px] sm:text-[13px] font-bold uppercase tracking-widest py-4 sm:py-5 rounded-full hover:bg-[#e02200] transition-colors">
-                Join the Waitlist
+            <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full bg-[#FF2600] text-white font-inter text-[12px] sm:text-[13px] font-bold uppercase tracking-widest py-4 sm:py-5 rounded-full hover:bg-[#e02200] transition-colors disabled:opacity-50"
+            >
+                {status === 'loading' ? 'Joining...' : 'Join the Waitlist'}
             </button>
 
-        </div>
+        </form>
     )
 }
 
